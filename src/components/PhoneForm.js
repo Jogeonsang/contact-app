@@ -12,9 +12,19 @@ handleChange = (e) =>{
     [e.target.name] : e.target.value
   });
 }
+
+handleSubmit = (e) => {
+  e.preventDefault();
+  this.props.onCreate(this.state)
+  this.setState ({
+    name: '',
+    phone: '',
+  })
+}
+
   render(){
     return(
-      <form>
+      <form onSubmit={this.handleSubmit}>
         < input name = "name"
           placeholder = "이름"
           onChange={this.handleChange}
@@ -26,9 +36,9 @@ handleChange = (e) =>{
           onChange={this.handleChange}
           value={this.state.phone}
         />
+        <button type = "sumbit">등록</button>
         <div>
-          {this.state.name}
-          {this.state.phone}
+          
         </div>
       </form>
     );
