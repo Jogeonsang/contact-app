@@ -38,7 +38,8 @@ handleSubmit = (e) => {
         />
         <button type = "sumbit">등록</button>
         <div>
-          
+          {this.state.name}
+          {this.state.phone}
         </div>
       </form>
     );

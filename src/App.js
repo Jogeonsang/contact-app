@@ -67,12 +67,12 @@ class App extends Component {
   render() {
     return (
       <div>
+      <input
+        value = {this.state.value}
+        onChange = {this.handleChange}
+        placeholder = "검색"
+      />
         <PhoneForm onCreate={this.handleCreate}/>
-        <input
-          value = {this.state.value}
-          onChange = {this.handleChange}
-          placeholder = "검색"
-        />
         <PhoneInfoList
         data = {this.state.information.filter(
           info => info.name.indexOf(this.state.keyword) > -1
